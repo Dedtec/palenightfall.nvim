@@ -9,6 +9,7 @@ local M = {}
 ---@type table<string, string>
 M.colors = {
   background = '#252837',
+  bg =  '#252837',
   foreground = '#a6accd',
 
   background_darker = '#232534',
@@ -89,7 +90,7 @@ function M.configure_highlights(overrides, transparent)
     SignColumn        = { bg = 'NONE' },
     FoldColumn        = { fg = c.line_numbers, bg = 'NONE' },
     Folded            = { fg = c.comments, bg = c.background_darker },
-    VertSplit         = { fg = c.statusline, bg = c.background },
+    VertSplit         = { fg = c.statusline, bg = 'NONE' },
     Statusline        = { fg = c.foreground, bg = c.statusline },
     StatuslineNC      = { fg = c.foreground_darker, bg = c.statusline },
     TabLine           = { fg = c.foreground, bg = c.statusline },
@@ -204,6 +205,13 @@ function M.configure_highlights(overrides, transparent)
 
     -- Vimscript
     vimOption = { fg = c.yellow },
+
+    -- Whichkey
+    WhichKey =  { fg = c.purple, bg = 'NONE' },
+    WhichKeySeperator = { fg = c.yellow, bg = 'NONE' },
+    WhichKeyGroup = { fg = c.yellow, bg = 'NONE' },
+    WhichKeyDesc = { fg = c.fg, bg = 'NONE' },
+    WhichKeyFloat = { fg = 'NONE', bg = c.background_darker },
 
     -- plasticboy/vim-markdown
     mkdHeading       = { fg = c.green },
